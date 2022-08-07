@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import AllArtistService from "services/allartists";
 import SearchArtistService from "services/searchartist";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetStaticProps = async () => {
   const listOfArtistFromDeezer = await AllArtistService.getAllArtistFromChart();
   const getCircularReplacer = () => {
     const seen = new WeakSet();
@@ -25,9 +25,7 @@ export const getServerSideProps = async () => {
   };
   return {
     props: {
-      data: JSON.parse(
-        JSON.stringify(listOfArtistFromDeezer.data, getCircularReplacer())
-      ),
+      data: JSON.parse(JSON.stringify(listOfArtistFromDeezer.data)),
     },
   };
 };
