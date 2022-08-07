@@ -20,9 +20,8 @@ const Artist = ({ getArtist }: any) => {
           router.replace(`/artists/${data?.id}`);
         }}
       >
-        <a href="#!">
-          <img className="rounded-t-lg" src={data?.picture_big} alt="" />
-        </a>
+        <img className="rounded-t-lg" src={data?.picture_big} alt="" />
+
         <div className="p-6">
           <h5 className="text-gray-900 text-xl font-medium mb-2">
             {data.name}
