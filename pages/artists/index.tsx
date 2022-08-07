@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import AllArtistService from "services/allartists";
 import SearchArtistService from "services/searchartist";
 
-export const getServerSideProps: GetStaticProps = async () => {
+export async function getServerSideProps() {
   const listOfArtistFromDeezer = await AllArtistService.getAllArtistFromChart();
   const getCircularReplacer = () => {
     const seen = new WeakSet();
@@ -23,24 +23,24 @@ export const getServerSideProps: GetStaticProps = async () => {
       return value;
     };
   };
+  const data = await listOfArtistFromDeezer.data;
+
   return {
-    props: {
-      data: JSON.parse(
-        JSON.stringify(listOfArtistFromDeezer.data, getCircularReplacer())
-      ),
-    },
+    props: { data },
   };
-};
+}
 
 const Index = (props: any) => {
   const [getArtist, setArtist] = useState<any[]>([]);
   const searchValue = useAppSelector((state) => state.artist.currentSearch);
   const getArtistBySearching = async (artistName: string) => {
-    const searchedArtistFromDeezer =
-      await SearchArtistService.getArtistBySearch(artistName);
-    if (searchedArtistFromDeezer.status === 200) {
-      console.log(searchedArtistFromDeezer.data, "data");
-      setArtist(searchedArtistFromDeezer.data);
+    if (searchValue) {
+      const searchedArtistFromDeezer =
+        await SearchArtistService.getArtistBySearch(artistName);
+      if (searchedArtistFromDeezer.status === 200) {
+        console.log(searchedArtistFromDeezer.data, "data");
+        setArtist(searchedArtistFromDeezer.data);
+      }
     }
   };
   useEffect(() => {

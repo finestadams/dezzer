@@ -1,5 +1,10 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import { artistImage, artistTrackId } from "features/artists/artistSlice";
+import {
+  artistImage,
+  artistName,
+  artistTrackId,
+  noOfFans,
+} from "features/artists/artistSlice";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import SearchArtistService from "services/searchartist";
@@ -17,6 +22,8 @@ const Artist = ({ getArtist }: any) => {
         onClick={() => {
           dispatch(artistTrackId(data?.id));
           dispatch(artistImage(data?.picture_big));
+          dispatch(noOfFans(data?.resp?.nb_fan));
+          dispatch(artistName(data.name));
           router.replace(`/artists/${data?.id}`);
         }}
       >
