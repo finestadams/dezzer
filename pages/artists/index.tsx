@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import AllArtistService from "services/allartists";
 import SearchArtistService from "services/searchartist";
 
-export const getServerSideProps: GetStaticProps = async () => {
+export const getServerSideProps = async () => {
   const listOfArtistFromDeezer = await AllArtistService.getAllArtistFromChart();
   const getCircularReplacer = () => {
     const seen = new WeakSet();
@@ -34,7 +34,6 @@ export const getServerSideProps: GetStaticProps = async () => {
 
 const Index = (props: any) => {
   const [getArtist, setArtist] = useState<any[]>([]);
-  const [search, setSearch] = useState("jazzy");
   const searchValue = useAppSelector((state) => state.artist.currentSearch);
   const getArtistBySearching = async (artistName: string) => {
     const searchedArtistFromDeezer =
