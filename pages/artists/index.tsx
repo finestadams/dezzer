@@ -25,7 +25,9 @@ export const getServerSideProps: GetStaticProps = async () => {
   };
   return {
     props: {
-      data: JSON.parse(JSON.stringify(listOfArtistFromDeezer.data)),
+      data: JSON.parse(
+        JSON.stringify(listOfArtistFromDeezer.data, getCircularReplacer())
+      ),
     },
   };
 };
