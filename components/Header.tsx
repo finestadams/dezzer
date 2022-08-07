@@ -1,5 +1,6 @@
 import { useAppDispatch } from "app/hooks";
 import { searchArtist } from "features/artists/artistSlice";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -16,13 +17,15 @@ const Header = () => {
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-5 rounded dark:bg-gray-900 shadow">
         <div className="container flex space-x-9  items-center mx-auto">
           <div>
-            <a href="/artists" className="flex items-center">
-              <img
-                src="/svg/logo.svg"
-                className="mr-3 h-6 sm:h-9"
-                alt="Deezer Logo"
-              />
-            </a>
+            <Link href="/artists">
+              <a className="flex items-center">
+                <img
+                  src="/svg/logo.svg"
+                  className="mr-3 h-6 sm:h-9"
+                  alt="Deezer Logo"
+                />
+              </a>
+            </Link>
           </div>
 
           <div
