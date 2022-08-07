@@ -2,11 +2,12 @@ import { useAppSelector } from "app/hooks";
 import React, { useEffect, useState } from "react";
 import AlbumList from "./AlbumList";
 import PlayLists from "./PlayLists";
+import Images from "next/image";
 
 const ArtistDetail = ({ albumDetail }: any) => {
-  console.log(albumDetail, "in");
-
   const artistImg = useAppSelector((state) => state.artist.currentArtistImage);
+  const artistName = useAppSelector((state) => state.artist.currentArtistName);
+  const noOfFans = useAppSelector((state) => state.artist.currentNoOfFans);
   const getArtistDetails = albumDetail?.data?.map((data: any) => {
     return (
       <>
@@ -24,12 +25,16 @@ const ArtistDetail = ({ albumDetail }: any) => {
 
   return (
     <>
-      <div className="flex flex-col justify-center md:flex-row md:max-w-1/2">
+      <div className="flex flex-col justify-center md:flex-row md:max-w-1/2 relative">
         <img
           className="object-cover w-full h-96 rounded-t-lg md:h-72 md:w-1/2 md:rounded-none "
           src={artistImg}
-          alt=""
+          alt="img"
         />
+        <div className="absolute left-10 bottom-1/2 ">
+          <h1 className="font-semibold text-2xl ">{artistName}</h1>
+          <p className="text-small font-light">{noOfFans} fans</p>
+        </div>
         <div className="flex flex-col justify-start p-4 leading-normal flex-1">
           <h5 className=" text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-5">
             Top tracks

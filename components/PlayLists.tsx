@@ -16,7 +16,6 @@ const PlayLists = ({ data }: any) => {
   return (
     <div
       className="flex space-x-10 border-b py-2 justify-between"
-      key={data.id}
       onClick={toggle}
     >
       <div className="flex item-center space-x-3 cursor-pointer">

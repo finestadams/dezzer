@@ -4,7 +4,9 @@ const initialState = {
   currentArtist: {},
  currentTrackId: '',
  currentArtistImage : '',
- currentSearch: ''
+ currentSearch: '',
+ currentNoOfFans: 0,
+ currentArtistName: ''
 };
 
 export const artistSlice = createSlice({
@@ -25,10 +27,16 @@ export const artistSlice = createSlice({
     searchArtist: (state, { payload }) => {
       state.currentSearch = payload;
     },
+    noOfFans: (state, { payload }) => {
+      state.currentNoOfFans = payload;
+    },
+    artistName: (state, { payload }) => {
+      state.currentArtistName = payload;
+    },
   }
 });
 
 // Action creators are generated for each case reducer function
-export const { artistData, artistTrackId, artistImage, searchArtist } = artistSlice.actions;
+export const { artistData, artistTrackId, artistImage, searchArtist, noOfFans, artistName } = artistSlice.actions;
 
 export default artistSlice.reducer;
