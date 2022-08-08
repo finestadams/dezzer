@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div>
+  <div
+    class="p-4 bg-white md:px-6 md:py-8 "
+  >
+    <hr
+      class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+    />
+    <span
+      class="block text-sm text-gray-500 text-center"
+    >
+      Powered by
+       
+      <a
+        class="hover:underline text-black text-[14px]"
+        href="/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Deezer
+      </a>
+    </span>
+  </div>
+</div>
+`;

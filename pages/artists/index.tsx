@@ -48,11 +48,16 @@ const Index = (props: any) => {
   }, [searchValue]);
 
   return (
-    <div className="grid grid-cols-1 gap-3 w-3/4 m-auto md:grid-cols-3 md:gap-4 md:w-4/6 md:m-auto">
-      {searchValue && <Artist getArtist={getArtist}></Artist>}
+    <>
+      <h1 className="text-2xl font-semibold pb-4 grid grid-cols-1 gap-3 w-3/4 m-auto md:grid-cols-3 md:gap-4 md:w-4/6 md:m-auto">
+        Artists
+      </h1>
+      <div className="grid grid-cols-1 gap-3 w-3/4 m-auto md:grid-cols-3 md:gap-4 md:w-4/6 md:m-auto">
+        {searchValue && <Artist getArtist={getArtist}></Artist>}
 
-      {!searchValue && <Artists getAllArtists={props.data}></Artists>}
-    </div>
+        {!searchValue && <Artists getAllArtists={props.data}></Artists>}
+      </div>
+    </>
   );
 };
 
