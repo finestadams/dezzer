@@ -4,8 +4,8 @@
 - yarn run dev
 
 ## Environment variables
-- in the root of the folder, add a file env.local
-- DEEZER_API = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com'
+- in the root of the folder, create a file env.local
+- add to file - DEEZER_API = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com'
 
 ## How to contribute, checkout and rebase
 - git checkout main branch (git checkout main)
