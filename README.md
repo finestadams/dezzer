@@ -1,3 +1,27 @@
+## How to install
+- git clone git url
+- yarn install
+- yarn run dev
+
+## How to checkout and rebase
+- git checkout main branch (git checkout main)
+- git checkout -b NewBrachName
+- after working on the new branch, do git checkout main, git pull (for up to date code)
+- git checkout to new branch again(without the -b)
+- git rebase -XOurs main
+- git push -f
+- 
+## Features implement
+- search artist
+- play music
+- display top tracks
+- display album
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
