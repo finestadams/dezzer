@@ -3,7 +3,7 @@
 - yarn install
 - yarn run dev
 
-## How to checkout and rebase
+## How to contribute, checkout and rebase
 - git checkout main branch (git checkout main)
 - git checkout -b NewBrachName
 - after working on the new branch, do git checkout main, git pull (for up to date code)
@@ -16,11 +16,14 @@
 - play music
 - display top tracks
 - display album
+- and many more
 
-
-
-
-
+## libraries
+- Axios
+- nextjs
+- redux tool kit
+- tailwind
+- typescript
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
