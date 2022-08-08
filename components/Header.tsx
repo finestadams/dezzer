@@ -5,8 +5,15 @@ import React, { useEffect, useState } from "react";
 
 const Header = () => {
   const [search, setSearch] = useState("");
+  const [localStorageExists, setLocalStorageExists] = useState(false);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    if (!localStorage.getItem("favourites-album")) {
+      setLocalStorageExists(true);
+    }
+  }, [localStorageExists]);
+  console.log(typeof localStorage.getItem("favourites-album"), "to");
   useEffect(() => {
     if (!search) {
       dispatch(searchArtist(search));
@@ -41,13 +48,17 @@ const Header = () => {
                 value={search}
                 onChange={(e) => {
                   setSearch(e.target.value);
-
                   setTimeout(() => {
                     dispatch(searchArtist(search));
-                  }, 3000);
+                  }, 5000);
                 }}
               />
             </form>
+          </div>
+          <div>
+            <Link href={!localStorageExists ? "/album/favourites" : "#"}>
+              <a className="flex items-center">Favourites</a>
+            </Link>
           </div>
         </div>
       </nav>
