@@ -3,7 +3,7 @@
 - yarn install
 - yarn run dev
 
-## Environmtnvariables
+## Environment variables
 - in the root of the folder, add a file env.local
 - DEEZER_API = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com'
 
