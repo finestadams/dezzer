@@ -20,6 +20,7 @@
 - play music
 - display top tracks
 - display album
+- add favpurites album to local storage
 - and many more
 
 ## libraries
