@@ -58,7 +58,7 @@ const Artists = ({ getAllArtists }: any) => {
       </div>
     );
   });
-  return <>{eachArtistAfterMap}</>;
+  return <> {eachArtistAfterMap}</>;
 };
 
 export default Artists;
